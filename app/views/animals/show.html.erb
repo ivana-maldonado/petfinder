@@ -1,2 +1,10 @@
-<h1>Animals#show</h1>
-<p>Find me in app/views/animals/show.html.erb</p>
+<h1><%= @pet["name"] %></h1>
+<h4><%= @pet["age"] %></h4>
+
+<% @pet["photos"].each do |image| %>
+    <img src = "<%= image["medium"] %>">
+<%end%>
+
+<% if @pet["photos"].count == 0 %>
+    <h4>No Pictures! 🐕</h4>
+<%end%>

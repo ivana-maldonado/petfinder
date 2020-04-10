@@ -1,2 +1,10 @@
-<h1>Shelters#show</h1>
-<p>Find me in app/views/shelters/show.html.erb</p>
+<h1><%= @shelter["name"] %></h1>
+<p><%= @shelter["address"]["address1"] %>, <%= @shelter["address"]["address2"] %> <%= @shelter["address"]["city"] %> 
+    <%= @shelter["address"]["state"] %>, <%= @shelter["address"]["postcode"] %></p>
+<h3><%= link_to "website", @shelter["url"]%></h3>
+
+
+
+
+
+
