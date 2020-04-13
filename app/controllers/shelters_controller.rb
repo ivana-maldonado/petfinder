@@ -8,6 +8,6 @@ class SheltersController < ApplicationController
     id = params["id"]
     @shelter = PetDataService.getShelter(id)
 
-    PetDataService.getAnimalsByShelterId(shelterId)
+    @pets = PetDataService.getAnimalsByShelterId(id)
   end
 end

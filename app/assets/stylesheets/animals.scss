@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "card";
-
-.card {
-    margin-bottom: 0.50rem;
-    background-color: red($color: #000000);
-    color: green($color: #000000);
+.x {
+    color: red;
 }

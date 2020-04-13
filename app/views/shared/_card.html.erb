@@ -1,7 +1,6 @@
-<% @pets.each do |pet| %>
-<%= link_to animals_path(animals) do %>
+<% pets.each do |pet| %>
 <div class="card" style="width: 18rem; ">
-  <img src=" " class="card-img-top" alt="...">
+  <%= image_tag (pet["photos"].count > 0) ? pet["photos"][0]["medium"] : "dog.jpg", class: "card-img-top" %> 
   <div class="card-body">
     <h5 class="card-title"><%= link_to pet["name"], { action: "show", id: pet["id"]} %></h5>
     <h6 class="card-subtitle mb-2 text-muted"><%= pet["type"] %></h6>
@@ -11,4 +10,4 @@
   </div>
 </div>
 <%end%>
-<%end%>
+

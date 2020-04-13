@@ -5,10 +5,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Pets</a>
-      <a class="nav-item nav-link" href="#">Shelters</a>
-      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    <%= link_to "Home", { action: "index", controller: "home" }, class: "nav-item nav-link #{x == "home" ? "active" : ""}" %> 
+    <%= link_to "Pets", { action: "index", controller: "animals" }, class: "nav-item nav-link #{x == "animals" ? "active" : ""}" %> 
+    <%= link_to "Shelters", { action: "index", controller: "shelters" }, class: "nav-item nav-link #{x == "shelters" ? "active" : ""}" %> 
+      
     </div>
   </div>
 </nav>

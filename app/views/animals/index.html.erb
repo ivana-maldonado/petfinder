@@ -1,3 +1,4 @@
+<%= render '/shared/navbar', x:"animals" %>
 
 <%= link_to "dog", @params.merge({ action: "index", type: "dog"}), class:"btn btn-light mb-3" %>
 <%= link_to "cat", @params.merge({ action: "index", type: "cat"}), class:"btn btn-light mb-3"%>
@@ -6,23 +7,10 @@
 <%= link_to "adult", @params.merge({ action: "index", age: "adult"}), class:"btn btn-light mb-3"%>
 <%= link_to "senior", @params.merge({ action: "index", age: "senior"}), class:"btn btn-light mb-3"%>
 
-<ul>
-    <% @pets.each do |pet| %>
-        <li><%= link_to pet["name"], { action: "show", id: pet["id"]} %></li>
-    <%end%>
-</ul>
-
-<% @pets.each do |pet| %>
-<div class="card" style="width: 18rem; ">
-  <img src=" " class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><%= link_to pet["name"], { action: "show", id: pet["id"]} %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= pet["type"] %></h6>
-    <p class="card-text">Age: <%= pet["age"] %></p>
-    <p class="card-text">Gender: <%= pet["gender"] %></p>
-    <p class="card-text">Size: <%= pet["size"] %></p>
-  </div>
+<div class="container">
+    <div class="row">
+        <%= render '/shared/card', pets: @pets %>
+    </div>
 </div>
-<%end%>
 
 
