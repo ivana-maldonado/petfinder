@@ -1,0 +1,9 @@
+
+<ul>
+    <% @favorite_pet.each do |favorite| %>
+        <li><%= favorite["name"] %>
+        <%= link_to "delete", favorite_pet_path(favorite["id"]), method: :delete, class:"btn btn-light mb-3" %> 
+    <% end %>
+</ul>
+
+ 

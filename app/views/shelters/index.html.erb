@@ -1,1 +1,7 @@
 <%= render '/shared/navbar', x:"shelters" %>
+
+<div class="container">
+    <% @shelters.each do |shelter| %>
+            <li><%= link_to shelter["name"], { action: "show", id: shelter["id"]} %></li>
+        <%end%>
+</div>

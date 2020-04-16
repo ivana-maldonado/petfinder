@@ -1,12 +1,15 @@
 <%= render '/shared/navbar', x:"animals" %>
 
 <h1><%= @pet["name"] %></h1>
+<%= link_to "⭐️", add_pet_favorites_path(@pet["id"]), method: :post %>
 <h4><%= @pet["age"] %></h4>
 
 <% @pet["photos"].each do |image| %>
-    <img src = "<%= image["medium"] %>">
+    <img src = "<%= image["medium"] %>">  
 <%end%>
 
 <% if @pet["photos"].count == 0 %>
     <h4>No Pictures! 🐕</h4>
 <%end%>
+
+<%= link_to "add favorite", ({ controller: "favorite_pets", action: "create", petID: @pet["id"]}), method: :post, class:"btn btn-light mb-3" %>
